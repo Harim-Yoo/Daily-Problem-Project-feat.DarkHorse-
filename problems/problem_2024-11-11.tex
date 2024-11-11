@@ -6,3 +6,16 @@ Given a circle centered at $O$, there exists an obtuse triangle $ABC$ inscribed 
 Let $h$ be the length of the height from $B$ to $\overline{AC}$. Then, by similarity, $AB:h=2R:BC$. Hence, $AB(BC)=h(2R)$. Thus, $24=4R$. The radius is $4$, so the area of the circle equals $16\pi$.
 \end{solution}
 
+\begin{problem}
+Determine the remainder when $3^{15}+5^{15}$ is divided by $17$. 
+\end{problem}
+
+\begin{solution}
+According to Fermat's Little Theorem, $3^{16}\equiv 5^{16} \equiv 1 \pmod{17}$.
+\begin{align*}
+    3^{15}+5^{15} & \equiv \frac13+\frac15 \pmod{17}\\
+    & \equiv \frac{18}{3}+\frac{35}{5} \pmod{17}\\
+    & \equiv 6+7 \pmod{17}\\
+    & \equiv 13 \pmod{17}
+\end{align*}
+\end{solution}

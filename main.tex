@@ -1,13 +1,22 @@
 \documentclass[12pt]{article}
 \usepackage{amsmath, amssymb, amsthm}
-
+\usepackage{comment} 
 \newtheorem{problem}{Problem}
-\newtheorem*{solution}{Solution}
 
+\newif\ifshowsolutions
+\showsolutionsfalse  
+
+\ifshowsolutions
+  \newenvironment{solution}{\par\noindent\textbf{Solution:}\itshape}{\par}
+\else
+  \excludecomment{solution}
+\fi
+  
 \begin{document}
 
 \section*{Problem Archive}
 
 \input{problems/problem_2024-11-11.tex}
+\input{problems/problem_2024-11-12.tex}
 
 \end{document}
