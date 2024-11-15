@@ -119,7 +119,7 @@ There are three rows with three seats each. If Mary, May and Mo wish to sit down
 \end{problem}
 
 \begin{solution}
-It is pretty much simple. The answer is $9\times4\times1=36$.
+Send Mary, May, and Mo, in that order. The answer is $9\times4\times1=36$.
 \end{solution}
 
 \begin{problem}
@@ -128,4 +128,20 @@ In how many ways can four $($'s and $)$'s be arranged in a line such that $)$ mu
 
 \begin{solution}
 This is a typical Catalan number problem for $4\times4$. Hence, there are $\frac{1}{5}\binom{8}{4}=14$.
+\end{solution}
+
+\begin{problem}
+Points $P$ and $Q$ lie outside and inside square $AIME$, respectively such that $\triangle API \cong \triangle MQI$ and $m\angle API = 90^\circ$. Suppose that $AP=1$ and $PQ=24$. Compute $[AIME]$ where $[AIME]$ refers to the area of $\square AIME$.
+\end{problem}
+
+\begin{solution}
+Apply Pythagorean Theorem to conclude that $PI=12\sqrt{2}$ and $AP=1$, so $AI=17$. Hence, $AI^2=289=[AIME]$.
+\end{solution}
+
+\begin{problem}
+A polynomial equation $x^3+px^2+12x+q=0$ has integer roots, one of which is $1$. Find the maximal possible value of $p$.
+\end{problem}
+
+\begin{solution}
+According to Viete's formula, let $x^3+px^2+12x+q=(x-1)(x-a)(x-b)$ for two other solutions $a$ and $b$. Then, $(a+1)(b+1)=13$ implies that $(a,b)=(12,0)$, $(0,12)$, $(-14,-2)$ and $(-2,-14)$. Hence, $p=-a-b-1$ is either $15$ or $-13$. The largest possible value is $15$.
 \end{solution}
