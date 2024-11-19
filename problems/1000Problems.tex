@@ -261,3 +261,351 @@ For a $4$-digit positive integer $n$, if $n^2$ and $n$ has the same remainder wh
 \begin{solution}
 The answer is $360$.
 \end{solution}
+
+\begin{problem}
+Determine the smallest positive integer $n$ such that $n!$ end with exactly $10$ zeros.
+\end{problem}
+
+\begin{solution}
+The answer is $45$.
+\end{solution}
+
+\begin{problem}
+If $20a+23b=2023$ for non-negative integers $a$ and $b$, determine the total number of $(a,b)$ pairs satisfying the given equation.
+\end{problem}
+
+\begin{solution}
+The answer is $5$. Here is one way of solving the problem.\\
+	Let $a$ and $b$ be non-negative integers satisfying $20a+23b=2023$. Then,
+	\begin{align*}
+		20a+23b&=2023\\
+		0a+3b&\equiv 3 \pmod{20}\\
+		3b&\equiv 3 \pmod{20}\\
+		b&\equiv 1 \pmod{20}
+	\end{align*}
+	Hence, $b=20k+1$ for some integer $k$. Since $23b=2023-20a\leq 2023$, we set $b\leq 87\frac{22}{23}$. Hence, $20k+1 \leq 87\frac{22}{23}$ implies that $0\leq k \leq 4$. Thus, there are $5$ values of $k$.
+\end{solution}
+
+\begin{problem}
+Given a monic cubic polynomial equation $x^3-5x^2+7x-11=0$ with solutions $r$, $s$, and $t$, determine the exact value of $r^3+s^3+t^3$.
+\end{problem}
+
+\begin{solution}
+The answer is $53$. Here is one way of solving the problem. Let $r$, $s$, and $t$ be the solutions to the given polynomial equation. Then, by Viete's formula,
+	\begin{align*}
+		x^3-5x^2+7x-11 &= (x-r)(x-s)(x-t)\\
+		x^3-5x^2+7x-11 &= x^3-(r+s+t)x^2+(rs+st+tr)x-rst
+	\end{align*}
+	Thus, we conclude that $r+s+t=5$, $rs+st+tr=7$ and $rst=11$.\\
+	\bigskip
+	According to algebraic identity of cubic sums, we get
+	\begin{align*}
+	r^3+s^3+t^3-3rst &= (r+s+t)(r^2+s^2+t^2-rs-st-tr)\\
+	r^3+s^3+t^3 &= (r+s+t)(r^2+s^2+t^2-rs-st-tr)+3rst\\
+	&= (r+s+t)((r+s+t)^2-3(rs+st+tr))+3rst\\
+	&=5((5^2)-3(7))+3(11)\\
+	&=20+33\\
+	&=53
+	\end{align*}
+	Another way to solve this problem is to use Newton's Identity. Let $S_1=r+s+t$, $S_2= r^2+s^2+t^2$, and $S_3=r^3+s^3+t^3$. Then, by Newton's identity,
+	\begin{align*}
+		S_1-5(1)&=0\\
+		S_2-5S_1+7(2)&=0\\
+		S_3-5S_2+7S_1-11(3)&=0
+	\end{align*}
+	Hence, $S_1=5$, $S_2=11$, and $S_3=53$.
+\end{solution}
+
+\begin{problem}
+For a quadratic function $f(x)=x^2-2$, for real $(x,y)$, if $|x|+2|y|\leq2$, then the minimum possible value of $f(x)$ can be written as $\frac{-a+\sqrt{b}}{c}$ where $a$, $b$, and $c$ are positive integers, and $b$ is a square-free integer. Determine the sum $a+b+c$. (Terminology: a square-free integer is a positive integer that is not divisible by any perfect square (other than 1).)
+\end{problem}
+
+\begin{solution}
+The answer is $32$.\\
+	\begin{center}
+	\begin{tikzpicture}
+		% Set the limits of the x and y axes
+		\def\xmin{-3}
+		\def\xmax{3}
+		\def\ymin{-3}
+		\def\ymax{3}
+		
+		\clip (\xmin,\ymin) rectangle (\xmax+1,\ymax+1);
+		
+		\draw  (-2,0)--(0,1)--(2,0)--(0,-1)--cycle;
+		\filldraw[gray!20] (-2,0)--(0,1)--(2,0)--(0,-1)--cycle;
+		
+		% Draw the graph of y = x^2 - 2
+		\draw[domain=\xmin:\xmax, smooth, samples=100] plot (\x,{\x*\x - 2});
+		\draw[latex-latex] (\xmin,0) -- (\xmax,0) node[right] {$x$};
+		\draw[latex-latex] (0,\ymin) -- (0,\ymax) node[above] {$y$};
+	\end{tikzpicture}
+	\end{center}
+As one can see from the figure above, $x^2-2=\frac{1}{2}x-1$ or $x^2-2=-\frac{1}{2}x-1$ result in the minimum possible value of $f(x)$. Hence, solving the equations, we get either $2x^2-4=x-2$ or $2x^2-4=-x-2$. Since $2x^2-x-2=0$ or $2x^2+x-2=0$, we get $x=\frac{1-\sqrt{15}}{4}$ or $\frac{-1+\sqrt{15}}{4}$.\\
+\bigskip
+The first solution will result in 
+\begin{align*}
+	y=-\frac{1}{2}x-1=-\frac{1}{2}\left(\frac{1-\sqrt{15}}{4}\right)-1=\frac{-9+\sqrt{15}}{8}
+\end{align*}
+Similarly, the second solution will result in 
+\begin{align*}
+	y=\frac{1}{2}x-1=\frac{1}{2}\left( \frac{-1+\sqrt{15}}{4} \right) -1 = \frac{-9+\sqrt{15}}{8}
+\end{align*}
+Hence, $a=9$, $b=15$, and $c=8$. Thus, $a+b+c=9+15+8=32$.\\
+\end{solution}
+
+\begin{problem}
+Given an equilateral triangle $ABC$ of side length $6$, suppose there is a square $PQRS$ inside the triangle such that three of its vertices are on the sides of the square, i.e., $\overline{AB}$, $\overline{BC}$, $\overline{AC}$. If $P$ is on the midpoint of $\overline{BC}$, $Q$ and $S$ are on $\overline{AB}$ and $\overline{AC}$, respectively, then $QS=a-b\sqrt{c}$ if $A$, $R$, and $P$ are collinear. If $a$, $b$, and $c$ are positive integers such that $c$ is a square-free integer, determine the product $abc$.\\
+\end{problem}
+
+\begin{solution}
+The answer is $81$. It is clear that $m\angle QPB = m \angle SPC = 45^\circ$, since $A$, $R$, and $P$ are collinear. Let $O$ be the intersection point between $\overline{QS}$ and $\overline{AP}$. Then, we may label $QO=RO=SO=OP=k$. This implies that 
+\begin{align*}
+	BQ&=\frac{2k}{\sqrt{3}}=\frac{2\sqrt{3}k}{3}\\
+	AQ&=6-\frac{2\sqrt{3}k}{3}
+\end{align*}
+Since $AQS$ is an equilateral triangle, we may use $\frac{AQ}{OQ}=\frac{1}{2}$. Hence, $\frac{6-\frac{2\sqrt{3}k}{3}}{k}=\frac{1}{2}$. Thus, $k=\frac{9-3\sqrt{3}}{2}$. Since $QS=PR=2k$, we conclude that $QS=a-b\sqrt{c}=9-3\sqrt{3}$. Thus, $a=9$, $b=3$, and $c=3$. Therefore, $abc=9\cdot3\cdot3=81$.\\
+\bigskip
+Similarly, if we use the laws of sines, 
+\begin{align*}
+	\frac{QP}{BP}&=\frac{k\sqrt{2}}{3}\\
+	&=\frac{\sin(60^\circ)}{\sin(75^\circ)}\\
+	&=\frac{\sqrt{3}/2}{(\sqrt{6}+\sqrt{2})/4}\\
+	&=\frac{2\sqrt{3}}{\sqrt{6}+\sqrt{2}}
+\end{align*}
+Hence, $k=\frac{36-12\sqrt{3}}{8}$. Thus, $2k=QS=9-3\sqrt{3}$. Hence, $abc=81$.
+\end{solution}
+
+\begin{problem}
+Given a piece-wise function $f(x)$ defined on $0\leq x \leq 2$ and $0\leq y \leq 2$ such that
+$$\begin{cases} x+1 & (0\leq x < 1) \\ 4-2x & (1\leq x \leq 2) \end{cases},$$ the graph of $y=f(f(f(x)))$, the $x$-axis and the vertical line $x=2$ form a bounded region. The area of the bounded region can be written as $\frac{m}{n}$ where $m$ and $n$ are relatively prime positive integers. Determine $m+n$.
+\end{problem}
+
+\begin{solution}
+The answer is $27$. Students learn sketching the graph of composition of functions in the first semester of Precalculus or second semester of Algebra 2. The graph of $y=f(f(f(x)))$ is given by the following figure.
+\begin{center}
+	\begin{tikzpicture}[scale=1.5]
+		\draw[-latex] (-0.5,0)--(3,0);
+		\draw[-latex] (0,-0.5)--(0,3);
+		\draw[dotted] (2,0)--(2,2)--(0,2);
+		\draw (0,0)--(0.5,2)--(1,1)--(1.25,2)--(1.5,0)--(2,2);
+		\draw (0.5,2)--(0.5,0) [dotted];
+		\draw (0,1)--(1,1)--(1,0) [dotted];
+		\draw (1.25,2)--(1.25,0) [dotted];
+		\node[below] at (0.5,0) {$\frac12$};
+		\node[below] at (1,0) {$1$};
+		\node[below] at (1.25,0) {$\frac54$};
+		\node[below] at (1.5,0) {$\frac32$};
+		\node[below] at (2,0) {$2$};
+		\node[left] at (0,2) {$2$};
+		\node[left] at (0,1) {$1$};
+		\node[right] at (3,0) {$x$};
+		\node[above] at (0,3) {$y$};
+	\end{tikzpicture}
+\end{center} 
+Hence, the area bounded by the graph of $y=f(f(f(x)))$, the $x$-axis, and the vertical line $x=2$ can be computed as 
+\[
+\frac12+\frac34+\frac38+\frac14+\frac12=2+\frac38=\frac{19}{8}
+\]
+Thus, $m=19$ and $n=8$. The sum of $m$ and $n$ is $27$.\\
+\end{solution}
+
+\begin{problem}
+Given a set of integers $\{1,2,3,4,5,6,7,8,9\}$, if five integers, not necessarily distinct, are chosen at random, as $a$, $b$, $c$, $d$, and $e$, respectively, the probability that $a\leq b < c \leq d \leq e$ can be written as $\frac{m}{n}$ where $m$ and $n$ are relatively prime positive integers. Determine the exact value of $m$. (In this problem, make sure that $b<c$.)
+\end{problem}
+
+\begin{solution}
+The answer is $88$. We perform caseworks.
+\begin{enumerate}
+	\item $a=b<c=d=e$ implies that there are $\binom{9}{2}$ choices for $(a,b,c,d,e)$.
+	\item $a<b<c=d=e$ implies that there are $\binom{9}{3}$ choices for $(a,b,c,d,e)$.
+	\item $a<b<c<d=e$ implies that there are $\binom{9}{4}$ choices for $(a,b,c,d,e)$.
+	\item $a<b<c<d<e$ implies that there are $\binom{9}{5}$ choices for $(a,b,c,d,e)$.
+	\item $a=b<c<d<e$ implies that there are $\binom{9}{4}$ choices for $(a,b,c,d,e)$.
+	\item $a=b<c=d<e$ implies that there are $\binom{9}{3}$ choices for $(a,b,c,d,e)$.
+	\item $a=b<c<d=e$ implies that there are $\binom{9}{3}$ choices for $(a,b,c,d,e)$.
+	\item $a<b<c=d<e$ implies that there are $\binom{9}{4}$ choices for $(a,b,c,d,e)$.
+\end{enumerate}
+Hence, we use the hockey-stick identity to compute the following expression, i.e.,
+\begin{align*}
+	&\binom92+\binom93+\binom94+\binom95+\binom94+\binom93+\binom93+\binom94\\
+	&= \binom{10}{3}+\binom{10}{5}+\binom{10}{4}+\binom{10}{4}\\
+	&=\binom{11}{4}+\binom{11}{5}\\
+	&=\binom{12}{5}
+\end{align*}
+Thus, the probability $\frac{m}{n}$ is equivalent to $\frac{11\cdot9\cdot8}{9\cdot9\cdot9\cdot9\cdot9}=\frac{88}{6561}$. Hence, $m=88$.
+\end{solution}
+
+\begin{problem}
+Given a regular pentagon cut into five congruent triangles with their common vertices in the middle of the figure, Bob is coloring each triangle with three different pastes - blue, red or orange - allowing repetitions. Determine the number of distinct pentagon colorings such that blue triangles must not be adjacent to red ones, if any.
+\end{problem}
+
+\begin{solution}
+The answer is $83$. We may use recursion and tree diagram. If the first region is colored with blue, then the second region can be colored either blue or orange. Likewise, if the first region is colored with red, then the second region can be colored either red or orange. On the other hand, if the first region is colored with orange, then the second region can be colored either blue, red, or orange.\\
+\bigskip
+If we begin coloring the first region by blue, then the fifth region can be colored with some pastes, according to the given condition can be counted as $29$, in total. However, since the fifth region cannot be colored as red, we must eliminate all red regions that occurred in the fifth region-coloring. Hence, there are $21$ possible ways to color the fifth region, still satisfying the given condition.\\
+\bigskip
+Likewise, if we begin coloring the first region by red, the symmetric counting implies that there are $21$ possible colorings of the fifth region.\\
+\bigskip
+On the other hand, if we begin coloring the first region by orange, then there are $41$ ways to color the fifth region, using the basic recursive form. Since there is no limitation on orange, we keep all $41$ colorings as valid counts. Hence, we take the sum of all possible colorings as $21+21+41=83$.\\ 
+\end{solution}
+
+\begin{problem}
+Given a positive $9$-digit integer such that there are three $2$'s, three $4$'s and three $0$'s, determine the total number of positive $9$-digit integers divisible by $12$.
+\end{problem}
+
+\begin{solution}
+The answer is $770$. The sum of all $9$ digits is already divisible by $3$ by default. Hence, we perform caseworks for divisibility by $4$.\\
+\begin{enumerate}
+	\item If the last two digits are $00$, then there are $\binom{7}{3,3}-\binom{6}{3,3}=120$ number of ways to arrange the remaining digits for $9$-digit integer.
+	\item If the last two digits are $20$, then there are $\binom{7}{3,2,2}-\binom{6}{2,3}=150$ number of ways to arrange the remaining digits for $9$-digit integer.
+	\item If the last two digits are $24$, then there are $\binom{7}{3,2,2}-\binom{6}{2,2,2}=120$ number of ways to arrange the remaining digits for $9$-digit integer.
+	\item If the last two digits are $40$, then there are $\binom{7}{3,2,2}-\binom{6}{3,2}=150$ number of ways to arrange the remaining digits for $9$-digit integer.
+	\item If the last two digits are $44$, then there are $\binom{7}{3,3}-\binom{6}{3,2}=80$ number of ways to arrange the remaining digits for $9$-digit integer.
+	\item If the last two digits are $04$, then there are $\binom{7}{3,2,2}-\binom{6}{3,2}=150$ number of ways to arrange the remaining digits for $9$-digit integer.
+\end{enumerate}
+Hence, there are $770$ positive $9$-digit integers divisible by $12$.
+\end{solution}
+
+\begin{problem}
+There is a closed region formed by connecting $(232023,232023)$, $(232019,232014)$, $(232022, 232022)$,  $(232014,232019)$, and back to $(232023,232023)$, in the written order. Determine the area of closed region.
+\end{problem}
+
+\begin{solution}
+The answer is $5$. Since the area of the figure will not change under translation, we translate all the points by applying $$(x',y')=(x-232014,y-232014).$$ Have a look at the following figure. 
+\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+		\draw (0,0)--(9,0)--(9,9)--(0,9)--cycle [dotted];
+		\draw (0,5)--(9,9)--(5,0)--(8,8)--cycle;
+		\node[left] at (0,5) {$(0,5)$};
+		\node[below left] at (0,0) {$(0,0)$};
+		\node[below] at (5,0) {$(5,0)$};
+		\node[above] at (9,9) {$(9,9)$};
+		\node[right] at (10,8) {$(8,8)$}; 
+		\draw[latex-] (8,8)--(10,8) [dotted];
+		\filldraw (5,0) circle (2pt);
+		\filldraw (0,5) circle (2pt);
+		\filldraw (8,8) circle (2pt);
+		\filldraw (9,9) circle (2pt);
+	\end{tikzpicture}
+\end{center}
+The shoelace theorem suggests that 
+\[
+\text{Area}= \frac{1}{2}|(9\cdot5+0\cdot8+8\cdot0+5\cdot9)-(9\cdot0+5\cdot8+8\cdot5+0\cdot9)| = \frac{1}{2} |10| = 5
+\]
+\end{solution}
+
+\begin{problem}
+Given a square $ABCD$ of side length $4$, a special laser point is shot from $A$ to a point $P_1$ on $\overline{BC}$ such that $AB:BP_1=4:1$. This laser is so special that it reflects to a point $P_2$ on $\overline{CD}$ such that $AP_1P_2$ is a right angle. Then, a laser will be shot to a point $P_3$ on $\overline{AD}$ such that $P_1P_2P_3$ is right. This process continued until there are $P_1$ on $\overline{BC}$, $P_2$ on $\overline{CD}$, $P_3$ on $\overline{AD}$ and $P_4$ on $\overline{AP_1}$. The area of $P_1P_2P_3P_4$ can be written as $\frac{m}{n}$ where $m$ and $n$ are relatively prime positive integers. Determine $m+n$.
+\end{problem}
+
+\begin{solution}
+The answer is $727$. Let's draw a figure, focusing on the similar triangles. 
+\begin{center}
+	\begin{tikzpicture}
+		\draw (0,0)--(4,0)--(4,4)--(0,4)--cycle;
+		\draw (0,4)--(1,0)--(4,3/4)--(51/16,4)--(3/16,13/4);
+		\node[left] at (0,2) {$4$};
+		\node[below] at (0.5,0) {$1$};
+		\node[below] at (1,0) {$P_1$};
+		\node[right] at (4,3/4) {$P_2$};
+		\node[above] at (51/16,4) {$P_3$};
+		\node[left] at (-0.5,13/4) {$P_4$};
+		\draw[latex-latex] (-0.5,13/4)--(3/16,13/4);
+		\filldraw (1,0) circle (2pt);
+		\filldraw (4,3/4) circle (2pt);
+		\filldraw (51/16,4) circle (2pt);
+		\filldraw (3/16, 13/4) circle (2pt);
+		\node[above] at (0,4) {$A$};
+		\node[below] at (0,0) {$B$};
+		\node[below] at (4,0) {$C$};
+		\node[above] at (4,4) {$D$};
+	\end{tikzpicture}
+\end{center}
+Since $CP_1:CP_2=4:1$, it is easy to find out $CP_2=\frac34$. Hence, $P_1P_2=\frac{3\sqrt{17}}{4}$. Since $P_2D=\frac{13}{4}$, the similar triangle ratio implies that $P_2P_3=\frac{13\sqrt{17}}{16}$. Thus, the area of $P_1P_2P_3P_4$ can be computed as the area of rectangle, i.e., 
+\[
+\frac{3\sqrt{17}}{4}\times\frac{13\sqrt{17}}{16}=\frac{39\cdot17}{64}=\frac{663}{64}
+\]
+Hence, $m+n=663+64=727$.
+\end{solution}
+
+\begin{problem}
+Given a real valued function $f(x)=\{x\}=x-\lfloor x \rfloor$, where $\lfloor x \rfloor$ is the greatest integer less than or equal to $x$, and $g(x)=\sin(2\pi x)$, let $h(x)=f(g(x))$. Then, there exist $n$ number of solutions satisfying $h(h(x))=x$. Determine the exact value of $n$.
+\end{problem}
+
+\begin{solution}
+The answer is $16$. In particular, at $0\leq x \leq \frac14$, the value of $h(x)$ shifts from $0$ to $1$, meaning that $h(h(x))$ must graph the full portion of $y=h(x)$ squeezed inside the interval $[0,\frac14]$. At $\frac14\leq x \leq \frac12$, the value of $h(x)$ shifts from $1$ to $0$, meaning that $h(h(x))$ must graph the full portion of $y=h(x)$ in reverse direction inside the given interval. We perform such graphing skill-sets in order to graph $y=h(h(x))$. Hence, we directly compute the number of intersections between $y=h(h(x))$ and $y=x$ as $16$ different points.
+\end{solution}
+
+\begin{problem}
+Determine the exact value of \[\left(\cos(\frac{2\pi}{2023})+\cos(\frac{4\pi}{2023})+\cos(\frac{6\pi}{2023})+\cdots+\cos(\frac{4044\pi}{2023})\right)^2.\]
+\end{problem}
+
+\begin{solution}
+The answer is $1$. Notice that $z^{2023}=1$ produces $2023$ roots of unity such that $z_{k}=\cos(\frac{2\pi k}{2023})+i\sin(\frac{2\pi k}{2023})$ for $k=0,1,2,\cdots,2022$ is a unique solution to the given equation. Now, have a look at $z^{2023}-1=0$. The sum of solutions must be $0$ by Viete's formula. In other words, 
+$$
+(\cos(0)+\cos(\frac{2\pi}{2023})+\cdots+\cos(\frac{4044\pi}{2023}))+i(\sin(0)+\sin(\frac{2\pi}{2023})+\cdots+\sin(\frac{4044\pi}{2023}))= 0+0i
+$$
+Hence, $\cos(\frac{2\pi}{2023})+\cos(\frac{4\pi}{2023})+\cdots+\cos(\frac{4044\pi}{2023})=-1$. Thus, $(-1)^2=1$.
+\end{solution}
+
+\begin{problem}
+Let $ABCD$ be a parallelogram such that $m\angle B <90^\circ$ and $AB<BC$. Let $H$ be the intersection point between the altitude from $A$ to $\overline{BC}$ and the altitude from $C$ to $\overline{AB}$. Let $P$ and $Q$ be the perpendicular foot from $A$ to $\overline{BC}$ and from $C$ to $\overline{AB}$, respectively. If $QH:AH:PH=1:3:4$, then $\tan^2(\angle HDC)$ can be written as $\frac{m}{n}$ where $m$ and $n$ are relatively prime positive integers. Determine $m+n$.
+\end{problem}
+
+\begin{solution}
+The answer is $177$. Let $AH=3k$, $QH=k$, and $PH=4k$. Then, by similar triangles formed by orthocenter, it is easy to find out that $CH=12k$ and $AB=\frac{21\sqrt{8}}{8}k$. Since $Q$ is the perpendicular foot from $C$ to $\overline{AB}$, it is clear that $\angle DCH$ is right. Hence, $\tan(\angle HDC)$ can be written as $\frac{CH}{CD}$. Since $CH=12k$ and $CD=AB=\frac{21\sqrt{8}}{8}k$, we conclude that
+\begin{align*}
+	\tan(\angle HDC)&=\dfrac{12k}{21\sqrt{8}k/8}\\
+	&=\frac{96}{21\sqrt{8}}\\
+	&=\frac{12\sqrt{8}}{21}\\
+	&=\frac{4\sqrt{8}}{7}\\
+	\tan^2(\angle HDC)&=\frac{16\cdot 8}{49}\\
+	&=\frac{128}{49}
+\end{align*}
+Thus, $m=128$ and $n=49$. The sum of $m$ and $n$ can be computed as $177$.
+\end{solution}
+
+\begin{problem}
+Given a regular hexagon labeled as $ABCDEF$, Bob the ant walks along its edge every minute, not changing its direction midway. He may walk the same path repeatedly, and he randomly selects the edges he may walk. For instance, if he stays at $B$, he may go to either $A$ or $C$ with equal likelihood. If Bob starts at one vertex, let's say $A$, determine the expected number of minutes it will take him to go visit the opposite vertex  $D$ for the first time.
+\end{problem}
+
+\begin{solution}
+The answer is $9$. Let $E_X$ be the expected number of minutes it will take Bob to go visit the opposite vertex $D$ for the first time. Due to symmetry, let $E_Y$ be the expected number of minutes it will take Bob to go from either $B$ or $F$ to visit the vertex $D$ for the first time. Also, due to symmetry, let $E_Z$ be the expected number of minutes it will take Bob to go from either $C$ or $E$ to visit the vertex $D$ for the first time.\\
+\bigskip
+First, $E_X=\frac{1}{2}(1+E_Y)+\frac{1}{2}(1+E_Y)$, so $E_X=1+E_Y$.\\
+Second, $E_Y=\frac{1}{2}(1+E_X)+\frac{1}{2}(1+E_Z)=1+\frac{1}{2}E_X+\frac{1}{2}E_Z$.\\
+Third, $E_Z=\frac{1}{2}(1+E_Y)+\frac{1}{2}(1)$.\\
+\bigskip
+Hence, we get the system of equations of $E_X$ and $E_Y$ such that
+\[
+\begin{cases}
+	E_X=1+E_Y\\
+	E_Y=1+\frac12E_X+\frac12(1+\frac12E_Y)
+\end{cases}
+\]
+Solving for $E_X$ and $E_Y$, we get $(E_X,E_Y)=(9,8)$. Hence, Bob will be expected to spend $9$ minutes before he reaches the opposite vertex $D$ for the first time.
+\end{solution}
+
+\begin{problem}
+Assume that $m$ and $n$ are positive integers. Let $a_{m,m}=1$ for integers $m$. If $a_{m+1,n}=a_{m,n}+2m$ and $a_{m,n+1}=a_{m,n}-2n$ for integers $m$ and $n$, determine the number of distinct $(m,n)$ satisfying $a_{m,n}=2023$.
+\end{problem}
+
+\begin{solution}
+The answer is $4$. First, let's fix $n=1$. Then,
+\begin{align*}
+	a_{2,1}&=a_{1,1}+2(1)\\
+	a_{3,1}&=a_{2,1}+2(2)\\
+	\vdots &= \vdots\\
+	a_{m,1}&=a_{m-1,1}+2(m-1)
+\end{align*}
+Hence, $a_{m,1}=a_{1,1}+2(1+2+\cdots+m-1)=1+(m-1)m$. Now, we free the values of $n$.
+\begin{align*}
+	a_{m,2}&=a_{m,1}-2(1)\\
+	a_{m,3}&=a_{m,2}-2(2)\\
+	\vdots&=\vdots\\
+	a_{m,n}&=a_{m,n-1}-2(n-1)
+\end{align*}
+Hence, $a_{m,n}=a_{m,1}-2(1+2+3+\cdots+n-1)=1+(m-1)m-(n-1)n=2023$.\\
+This implies $m^2-m-n^2+n=2022$, so $(m-n)(m+n)-(m-n)=2022$. Therefore, $(m-n)(m+n-1)=2022$. Since the difference between $m-n$ and $m+n-1$ is $2n-1$, the parity must be different. Also, since $n\geq 1$, $2n-1\geq1$. This implies that $m-n<m+n-1$. Furthermore, $m+n-1>0$ implies that $m-n>0$. Thus, $(m-n,m+n-1)=(1,2022)$, $(2,1011)$, $(3,674)$ and $(6,337)$. Since there are $4$ different pairs for $(m-n,m+n-1)$, there must be $4$ different pairs for $(m,n)$, by one-to-one correspondence.
+\end{solution}
