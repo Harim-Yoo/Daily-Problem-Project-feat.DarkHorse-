@@ -817,3 +817,219 @@ If a group of five people must join four clubs, where there could be some club w
 \begin{solution}
 The answer is $780$.
 \end{solution}
+
+\begin{problem}
+Given a urn that contains 4 blue beads and 6 yellow beads, if four beads are selected at random, then the probability that at least three yellow beads are selected can be written as $\frac{m}{n}$ where $m$ and $n$ are relatively prime integers. Compute $m+n$.
+\end{problem}
+
+\begin{solution}
+The answer is $61$. The probability is $19/42$.
+\end{solution}
+
+\begin{problem}
+If three fair die are thrown at a time, let $a$, $b$, and $c$ be the face values that appear on top for each throw. Let $p$ be the probability that $ab=c$. If $p=\frac{m}{n}$ where $m$ and $n$ are relatively prime positive integers, compute $m+n$.
+\end{problem}
+
+\begin{solution}
+The answer is $115$, where $m/n = 7/108$.
+\end{solution}
+
+\begin{problem}
+Determine the largest integer value of $k$ such that $10^k$ divides $\binom{1000}{499}$, where $\binom{1000}{499}$ equals $\frac{1000!}{{499!}{501!}}$.
+\end{problem}
+
+\begin{solution}
+The answer is $4$. First, we can calculate the $5$-adic number of $\binom{1000}{499}$ by
+\begin{itemize}
+\item $\lfloor \frac{1000}{5}\rfloor + \lfloor \frac{1000}{25} \rfloor + \lfloor \frac{1000}{125} \rfloor + \lfloor \frac{1000}{625} \rfloor = 249$.
+\item $\lfloor \frac{499}{5}\rfloor + \lfloor \frac{499}{25} \rfloor + \lfloor \frac{499}{125} \rfloor = 121$.
+\item $\lfloor \frac{501}{5}\rfloor + \lfloor \frac{501}{25} \rfloor + \lfloor \frac{501}{125} \rfloor = 124$.
+\end{itemize}
+such that $v_5(\frac{1000!}{499!501!})=249-121-124=4$. Thus, $10^4$ is the largest power of $10$ that divides $\binom{1000}{499}$.
+\end{solution}
+
+\begin{problem}
+If $y=mx+17$ for $\frac{1}{7}<m<k$, there is no lattice point for $x=0, 1, 2, \cdots, 119$. The maximum value of $k$ can be written as $\frac{p}{q}$ where $p$ and $q$ are relatively prime positive integers. Determine $p+q$. 
+\end{problem}
+
+\begin{solution}
+The answer is $135$. In order to tackle this problem, we must know how the lattice point works. First, draw the line with the slope of $\frac{1}{7}$ passing through $(0,17)$. Then, the graph of $y=\frac{1}{7}x+17$ passes through $(119,34)$. Notice that at $(118,34)$, the slope may change into $\frac{34-17}{118-0}=\frac{17}{118}$. Since the graph should not have lattice points as solution, it should not cross $(118,34)$. Perform the same analysis for $y=33$, $32$, $31$, and so on. We get that out of all possible slopes, $\frac{17}{118}$ must be the smallest value that covers all cases. Hence, $\frac{17}{118}$ must be the largest value of $k$. The answer must be $17+118=135$.
+\end{solution}
+
+\begin{problem}
+How many positive integers less than or equal to $2023$ satisfy the following property such that the product of the digits equals $8$?
+\end{problem}
+
+\begin{solution}
+The answer is $25$. Perform case-works on the number of digits such integer may have.
+\begin{itemize}
+    \item one-digit number : $8$.
+    \item two-digit number : $81$, $42$, $24$, $18$.
+    \item three-digit number : $811$, $181$, $118$, $421$, $412$, $241$, $214$, $142$, $124$, $222$.
+    \item four-digit number : same as the third case by fixing the thousands digit as $1$.
+\end{itemize}
+Hence, there are $1+4+10+10=25$.
+\end{solution}
+
+\begin{problem}
+Given a right triangle $ABC$, where $B$ is a right angle, if an angle bisector of $\angle BAC$ is drawn such that it intersects $\overline{BC}$ at $D$, assume that $AB=4$ and $BD=3$. The area of the triangle can be rounded down to an integer value of $N$. Determine the exact value of $N$.
+\end{problem}
+
+\begin{solution}
+Let $CD=3k$ and $AC=4k$, by angle bisector theorem. Then, 
+\begin{align*}
+(4k)^2&=4^2+(3k+3)^2\\
+16k^2&=16+9k^2+18k+9\\
+0&=7k^2-18k-25\\
+0&=(7k-25)(k+1)
+\end{align*}
+Hence, the area of the triangle can be written as 
+\begin{align*}
+\frac12\cdot4\cdot(3+3k)&=2(3+3k)\\
+&=2(3+\frac{75}{7})\\
+&=2(\frac{96}{7})\\
+&=\frac{192}{7}
+\end{align*}
+If $\frac{192}{7}$ is rounded down, then $N=27$.
+\end{solution}
+
+\begin{problem}
+Given a circle centered at $O$, there exists a chord $\overline{AD}$ located on one side of the circle. Assume that $B$ and $C$ are located on the minor arc formed by $AD=8$. If $ABCD$ is a cyclic quadrilateral with the largest possible area, and the central angle formed by the minor arc $AD$ has the measure of $135^\circ$, the area of $ABCD$ can be written as $a(\sqrt{b}-c)$ where $a$, $b$, and $c$ are positive integers, and $b$ is a square-free integer. Determine $a+b+c$.
+\end{problem}
+
+\begin{solution}
+The answer is $35$. The largest cyclic quadrilateral, satisfying the given condition, is an isosceles trapezoid. Suppose otherwise, then you can always find the other point on the minor arc that gives larger area to reach contradiction. Since the central angle has the measure of $135^\circ$, the angle measure of $\angle DAB$ or $\angle ADC$ are $45^\circ$.\\
+\bigskip
+Let $AB=BC=CD=k\sqrt{2}$ for some $k$. Then, $k+k\sqrt{2}+k=k(2+\sqrt{2})=8$. Since the area of $ABCD$ can be written as 
+\begin{align*}
+\frac{1}{2}(8+k\sqrt{2})k&=4k+\frac{k^2\sqrt{2}}{2}\\
+&=\frac{32}{2+\sqrt{2}}+\frac{64}{(2+\sqrt{2})^2}\cdot\frac{\sqrt{2}}{2}\\
+&=\frac{32}{2+\sqrt{2}}+\frac{32\sqrt{2}}{6+4\sqrt{2}}\\
+&=\frac{32}{2+\sqrt{2}}+\frac{16\sqrt{2}}{3+2\sqrt{2}}\\
+&=\frac{32}{2+\sqrt{2}}+16\sqrt{2}(3-2\sqrt{2})\\
+&=16(2-\sqrt{2})+48\sqrt{2}-64\\
+&=32-16\sqrt{2}+48\sqrt{2}-64\\
+&=32(\sqrt{2}-1)
+\end{align*}
+Hence, $a=32$, $b=2$, and $c=1$. Thus, the sum $a+b+c$ equals $35$.
+\end{solution}
+
+\begin{problem}
+If the product $\sin(\frac{\pi}{5})\sin(\frac{2\pi}{5})\sin(\frac{3\pi}{5})\sin(\frac{4\pi}{5})$ can be written as $\frac{m}{n}$ where $m$ and $n$ are relatively prime positive integers, determine $m+n$.
+\end{problem}
+
+\begin{solution}
+The answer is $21$. Let $\sin(5\theta)=0$ for $\theta=0$, $\frac{\pi}{5}$, $\frac{2\pi}{5}$, $\frac{3\pi}{5}$, and $\frac{4\pi}{5}$.
+\begin{align*}
+    \sin(5\theta) &= \binom{5}{1}\cos^4(\theta)\sin(\theta)-\binom{5}{3}\cos^2(\theta)\sin^3(\theta)+\binom{5}{5}\sin^5(\theta)\\
+    &= 5(1-\sin^2(\theta))^2\sin(\theta)-10(1-\sin^2(\theta))\sin^3(\theta)+\sin^5(\theta)\\
+    &= 5(1-2\sin^2(\theta)+\sin^4(\theta))\sin(\theta)-10(\sin^3(\theta)-\sin^5(\theta))+\sin^5(\theta)\\
+    &=5\sin(\theta)-10\sin^3(\theta)+5\sin^5(\theta)-10\sin^3(\theta)+10\sin^5(\theta)+\sin^5(\theta)\\
+    &=\sin(\theta)(16\sin^4(\theta)-20\sin^3(\theta)+5)
+\end{align*}
+Hence, by Viete's formula, $\sin(\frac{\pi}{5})\sin(\frac{2\pi}{5})\sin(\frac{3\pi}{5})\sin(\frac{4\pi}{5})=\frac{5}{16}$. Thus, $m+n=5+16=21$.
+\end{solution}
+
+\begin{problem}
+A pyramid has a square base with sides of length $1$ and has lateral faces that are equilateral triangles. A cube is placed within the pyramid so that one face is on the base of the pyramid and its opposite face has all its vertices only on the lateral faces of the pyramid. The volume of the cube can be written as $\frac{\sqrt{a}}{b}$ where $a$ and $b$ are positive integers. Determine $a+b$.
+\end{problem}
+
+\begin{solution}
+Let $k$ be the length of the edge of the inscribed cube. Then, by using similarity ratio of heights and bases, we get 
+\begin{align*}
+\frac{\frac12-\frac{k}{\sqrt{2}}}{\frac12}&=\frac{k}{\frac{\sqrt{2}}{2}}\\
+\frac{k}{2}&=\frac{\sqrt{2}}{4}-\frac{k}{2}\\
+k&=\frac{\sqrt{2}}{4}
+\end{align*}
+Hence, the volume must be $(\frac{\sqrt{2}}{4})^3=\frac{2\sqrt{2}}{64}=\frac{\sqrt{2}}{32}$. Thus, the answer is $34$.
+\end{solution}
+
+\begin{problem}
+Given a regular icosahedron, if each vertex is cut by a plane such that it leaves a smaller regular pentagon as its cross-section, we may call it a truncated icosahedron. Here, we assume that the size of the regular pentagon formed by a cross-section does not intersect with any other pentagon in the solid. Let $N$ be the number diagonals of the solid passing through the interior of the solid. Determine the remainder when $N$ is divided out by $1000$.
+\end{problem}
+
+\begin{solution}
+According to Euler's formula, we get the number of edges as $90$, the number of faces as $32$, and the number of vertices as $60$. We solve this problem using complementary counting method.\\
+\bigskip
+First, the total number of ways to connect two different vertices of the truncated icosahedron equals $\binom{60}{2}=1770$. Second, the total number of edges and diagonals on the faces are $90+(20\times9+12\times5)=330$. Hence, the difference between the two numbers equals $1440$. Thus, the remainder when $1440$ is divided by $1000$ equals $440$. The answer is $440$.
+\end{solution}
+
+\begin{problem}
+Bob went to a store that sells two types of packs of candies - one with 20 candies and the other with 23 candies. Determine the sum of the second and third largest number of candies he cannot buy.
+\end{problem}
+
+\begin{solution}
+Apply McNugget's Theorem to get $20\cdot23-20-23=417$. Since $417$ is the largest number of candies he cannot buy, $417-20$ or $417-23$ cannot be reached either. Hence, $397+394=791$. The answer is $791$.
+\end{solution}
+
+\begin{problem}
+If $\frac{2023!}{20!23!}$ is written in base $7$, determine the terminal zeros. Here, if the number is written as $\overline{1234000}_7$, there are three terminal zeros in base $7$.
+\end{problem}
+
+\begin{solution}
+The answer is $330$. Since we are looking for the $7$-adic number of $\frac{2023!}{20!23!}$, we calculate the following numbers.
+\begin{itemize}
+\item $\lfloor \frac{2023}{7}\rfloor + \lfloor \frac{2023}{49} \rfloor + \lfloor \frac{2023}{343}\rfloor = 335$.
+\item $\lfloor \frac{20}{7} \rfloor = 2$.
+\item $\lfloor \frac{23}{7} \rfloor =3$.
+\end{itemize}
+Hence, $v_7(\frac{2023!}{20!23!})=335-2-3=330$. Hence, there are $330$ terminal zeros in base-$7$ expression.
+\end{solution}
+
+\begin{problem}
+Given a triangle $ABC$ with $AB=15$, $AC=41$, and $BC=52$, there exists a circle centered at $O$, tangent to $\overline{BC}$, $\overrightarrow{AB}$ and $\overrightarrow{AC}$. The length $AO$ can be written as $a\sqrt{b}$ where $b$ is a square-free integer. Determine $a+b$.
+\end{problem}
+
+\begin{solution}
+The area of the triangle equals $234$, retrieved by using Heron's formula. First, $s=\frac{15+41+52}{2}=54$. Then, area equals $\sqrt{54\cdot 39 \cdot 13 \cdot 2}=234$. Hence, the inradius of the triangle equals $\frac{18}{3}$. Let $D$, $E$ and $F$ be the points of tangency to $\overline{AB}$, $\overline{AC}$ and $\overline{BC}$. Then, length chasing results in $AD=2$.\\
+\bigskip
+Since $O$ is the excenter of $A$, we will use similarity ratio to solve for $AO$. The excircle from $O$ to rays $AB$ and $AC$ result in points of tangency, i.e., $G$ and $H$, respectively. Then, $AG=AH$, by definition of angle bisector. Let $BG=\alpha$ and $CH=\beta$. Then, $\alpha+\beta=52$ and $15+\alpha=41+\beta$. Solving the system of equation results in $\alpha=39$ and $\beta=13$. Hence, $AD:AG=AI:AO$ if $I$ is the incenter. Thus, $2:54=\frac{\sqrt{205}}{3}:AO$. This indicates that $AO=9\sqrt{205}$. Therefore, the answer is $214$. 
+\end{solution}
+
+\begin{problem}
+If $p(x)=x^3-15x^2+11x-97$ has roots $r$, $s$, and $t$, then $\lvert \frac{1}{(r-1)^2}+\frac{1}{(s-1)^2}+\frac{1}{(t-1)^2} \rvert$ can be written as $\frac{m}{n}$ where $m$ and $n$ are relatively prime positive integers. Determine $m+n$.
+\end{problem}
+
+\begin{solution}
+The answer is $759$. By Viete's formula, $p(x)=(x-r)(x-s)(x-t)$. In order for $r-1$, $s-1$, and $t-1$ to be solutions, we must find $p(x+1)=0$, where $p(x+1)=x^3-12x^2-16x-100$. Since we must find the roots that are reciprocals, we turn the coefficients backward so that $q(x)=-100x^3-16x^2-12x+1$ have roots $\frac{1}{r-1}$, $\frac{1}{s-1}$, and $\frac{1}{t-1}$.\\
+\bigskip
+Let $\frac{1}{r-1}=r'$, $\frac{1}{s-1}=s'$, and $\frac{1}{t-1}=t'$. We apply Newton's identity so that $S_1=r'+s'+t'$ and $S_2=(r')^2+(s')^2+(t')^2$, where
+\begin{align*}
+-100S_2-16S_1-12(2)&=0\\
+100S_2&=-16S_1-24\\
+S_2&=-\frac{134}{625}
+\end{align*}
+Hence, $|S_2|=\frac{134}{625}$, so $59+625=759$.
+\end{solution}
+
+\begin{problem}
+A parallelogram $ABCD$ satisfies the following property. First, $\overline{AB}$ is parallel to $\overline{CD}$. Second, $\angle B$ and $\angle D$ are acute angles. Third, $AD>AB$. There exists a point $E$ on $\overline{AD}$ such that a ray from $B$ is drawn to $\overline{AD}$ such that its point of intersection is labeled as $E$, and the ray can be reflected about the side $\overline{AD}$ to $C$ such that $\angle ECD$ is a right angle. If $m\angle ABE : m \angle CBE = 1:2$ and $BE=12$, then the length $AD$ can be written as $a+\sqrt{b}$ where $a$ and $b$ are positive integers. Determine $a+b$.
+\end{problem}
+
+\begin{solution}
+The answer is $186$. Let $\theta=m\angle ABE$. Since $\triangle ECD$ is a right triangle, we compute that $2\theta+3\theta=90^\circ$. Hence, $\theta=18^\circ$. Let $F$ be the perpendicular foot from $E$ to $\overline{BD}$. Then, the triangle $EBF$ forms a right triangle with angle measures $36^\circ$, $54^\circ$ and $90^\circ$. Using basic trigonometric rules, we get
+\begin{align*}
+    \cos(2\theta)&=\frac{BF}{BE}\\
+    &=\frac{BF}{12}\\
+    \frac{\sqrt{5}+1}{4}&=\frac{BF}{12}\\
+    BF&=3\sqrt{5}+3\\
+    BC&=6\sqrt{5}+6
+\end{align*}
+Since $AD=BC=\sqrt{180}+6$, we get the answer $180+6=186$.
+\end{solution}
+
+\begin{problem}
+A triangle $ABC$ has $\angle B$ as a right angle and $AC=25$. There exists a point $D$ on $\overline{AB}$ such that $AD:BD=1:2$ and another point $E$ on $\overline{BC}$ such that $BE=AD$. If $\overline{AE}$ and $\overline{CD}$ intersect at $F$ such that $m\angle CFE = 45^\circ$, find the area of $\triangle ABC$.
+\end{problem}
+
+\begin{solution}
+The answer is $150$. Let $m\angle BAE=\theta$. Then, $m\angle BDC = \theta + 45^\circ$. Label $AD=k$, $BD=2k$ and $BE=k$. Then, $\tan(\theta)=\frac{1}{3}$. Apply the law of tangents such that
+\begin{align*}
+\tan(\theta+45^\circ)&=\frac{\tan(\theta)+\tan(45^\circ)}{1-\tan(\theta)\tan(45^\circ)}\\
+&=\frac{\frac13+1}{1-\frac13}\\
+&=2
+\end{align*}
+Hence, $BC=4k$. Since $AB=3k$ and $BC=4k$, we know that $AC=5k$. Hence, $AC=25=5k$ implies that $k=5$.\\
+\bigskip
+The area of the triangle $ABC$ can be written as $\frac12\times3k\times4k=6k^2=6(25)=150$.
+\end{solution}
