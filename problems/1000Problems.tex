@@ -1130,3 +1130,11 @@ Bob lists all possible subsets of $\{1,2,3,4,5,6\}$, including improper ones. He
 \begin{solution}
 Consider $f(x)=(x-1)(x-2)(x-3)(x-4)(x-5)(x-6)$. Then, $f(-1)=7!=1+1+2+3+4+5+6+1\cdot2+1\cdot3+\cdots+5\cdot6+\cdots+1\cdot2\cdot3\cdot4\cdot5\cdot6$. Hence, $7!-1$ is what we want. The answer is $5039$.
 \end{solution}
+
+\begin{problem}
+Consider a polynomial $p(x)=x^3-x^2+2x-1$ whose roots are $r$, $s$, and $t$. If $\frac{r^3}{s^2+t^2}+\frac{s^3}{r^2+t^2}+\frac{t^3}{r^2+s^2}$ can be written as $\frac{m}{n}$ where $m$ and $n$ are relatively prime positive integers, determine $m+n$.
+\end{problem}
+
+\begin{solution}
+First, Viete's formula states that $r+s+t=1$, $rs+st+tr=2$ and $rst=1$. This implies that $\frac{r^3}{s^2+t^2}+\frac{s^3}{r^2+t^2}+\frac{t^3}{r^2+s^2}=\frac{r^3}{-3-r^2}+\frac{s^3}{-3-s^2}+\frac{t^3}{-3-t^2}=\frac{17}{7}$. Hence, $m+n=17+7=24$. The answer is $24$.
+\end{solution}
